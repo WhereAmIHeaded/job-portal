@@ -1,0 +1,13 @@
+services:
+  dbservice:
+    image: mysql:latest
+
+    ports:
+      - "3306:3306"
+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: jobportal
+
+    volumes:
+      - /Users/weng/docker-data/jobportal-mysql:/var/lib/mysql
