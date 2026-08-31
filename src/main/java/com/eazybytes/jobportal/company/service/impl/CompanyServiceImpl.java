@@ -4,7 +4,6 @@ import com.eazybytes.jobportal.company.service.ICompanyService;
 import com.eazybytes.jobportal.dto.CompanyDto;
 import com.eazybytes.jobportal.entity.Company;
 import com.eazybytes.jobportal.repository.CompanyRepository;
-import com.eazybytes.jobportal.company.service.ICompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +17,7 @@ public class CompanyServiceImpl implements ICompanyService {
     private final CompanyRepository companyRepository;
 
 //    public CompanyServiceImpl(CompanyRepository companyRepository) {
-//        this.companyRepository = companyRepository;
+//    this.companyRepository = companyRepository;
 //    }
 
     @Override
