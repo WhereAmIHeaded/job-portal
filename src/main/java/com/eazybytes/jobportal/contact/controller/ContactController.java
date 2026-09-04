@@ -19,13 +19,14 @@ public class ContactController {
 
     @PostMapping(version = "1.0")
     public ResponseEntity<String> saveContactMsg(@RequestBody ContactRequestDto contactRequestDto) {
-        boolean isSaved =  contactService.saveContact(contactRequestDto);
-        if (isSaved) {
-            return ResponseEntity.status(HttpStatus.CREATED)
-                    .body("Request processed successfully");
-        } else {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Request processing failed");
-        }
+//        boolean isSaved =  contactService.saveContact(contactRequestDto);
+//        if (isSaved) {
+//            return ResponseEntity.status(HttpStatus.CREATED)
+//                    .body("Request processed successfully");
+//        } else {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                    .body("Request processing failed");
+//        }
+        throw new RuntimeException("It is a bad day...");
     }
 }
