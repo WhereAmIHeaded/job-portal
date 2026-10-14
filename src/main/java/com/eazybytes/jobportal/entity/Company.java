@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "COMPANIES")
@@ -38,8 +40,7 @@ public class Company extends BaseEntity {
     @Column(name = "FOUNDED", nullable = false)
     private Integer founded;
 
-    @Lob
-    @Column(name = "DESCRIPTION")
+    @Column(name = "DESCRIPTION", columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "EMPLOYEES")
@@ -48,5 +49,7 @@ public class Company extends BaseEntity {
     @Column(name = "WEBSITE", length = 500)
     private String website;
 
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Job> jobs = new ArrayList<>();
 
 }
