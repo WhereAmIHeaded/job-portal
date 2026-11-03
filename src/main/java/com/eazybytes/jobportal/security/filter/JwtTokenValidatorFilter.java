@@ -33,6 +33,7 @@ public class JwtTokenValidatorFilter extends OncePerRequestFilter {
     @Qualifier("publicPaths")
     private final List<String> publicPaths;
 
+    //处理jwt token
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response, FilterChain filterChain)
