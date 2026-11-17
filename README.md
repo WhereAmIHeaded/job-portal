@@ -25,10 +25,9 @@ This repository contains the backend. The frontend is maintained separately.
 
 The current main branch includes a login controller and JWT infrastructure, but its AuthenticationManager has no authentication provider configured yet. Login is therefore **not ready for end-to-end use**.
 
-User/role entities and repositories are present. Database-backed login, registration, duplicate-user checks, compromised-password checks, and CSRF protection are the next course milestones. CSRF is currently disabled in the security configuration.
+User/role entities and repositories are present. CSRF is currently disabled in the security configuration.
 
 ## Architecture
-
 
 ```text
 HTTP request
@@ -51,7 +50,6 @@ DTOs separate API responses from persistence entities. The company response incl
 
 ### 1. Clone the repository
 
-
 ```bash
 git clone https://github.com/WhereAmIHeaded/job-portal.git
 cd job-portal
@@ -73,7 +71,9 @@ Set MYSQL_ROOT_PASSWORD and DATABASE_PASSWORD to matching local database passwor
 | DATABASE_PASSWORD | Password used by the application; must match the database user |
 | JWT_SECRET | Signing key used by the JWT utility |
 
-### 3. Stose integration is configured to start and stop the database service with the application.
+### 3. Start the application
+
+Run ./mvnw spring-boot:run from the repository root. On Windows, use mvnw.cmd spring-boot:run. Spring Boot's Docker Compose integration is configured to start and stop the database service with the application.
 
 The default application address is http://localhost:8080. Database schema and sample-data scripts are provided under src/main/resources/sql/; they are not configured for automatic import. Review them before loading sample data into a local database.
 
@@ -89,3 +89,6 @@ Endpoints are prefixed with /api. Version 1.0 is the default; it can also be req
 
 Contact request fields: email, message (5–500 characters), name (5–30), subject (5–150), and userType. Accepted userType values are Job Seeker, Employer, and Other.
 
+## Learning context
+
+This is a course-based project used to practice Java backend development. The repository is evolving alongside the course; it is not presented as a production deployment. Course examples are adapted and explored as part of that learning process.
