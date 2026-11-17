@@ -12,7 +12,7 @@ A Java / Spring Boot backend for a job portal, developed while following an Eazy
 - Jakarta Bean Validation, Springdoc OpenAPI
 - Maven Wrapper, Docker Compose
 
-This repository contains the backend. The frontend is maintained separately.
+This repository contains the backend. The React frontend is available at [job-portal-ui](https://github.com/WhereAmIHeaded/job-portal-ui), with its own setup instructions.
 
 ## Current functionality
 
